@@ -1,0 +1,6 @@
+../Src/MGPIO_program.c:55:9:GPIO_u8PinInit	24	static
+../Src/MGPIO_program.c:108:9:GPIO_u8SetPinValue	24	static
+../Src/MGPIO_program.c:146:9:GPIO_u8TogglePinValue	24	static
+../Src/MGPIO_program.c:172:9:GPIO_u8ReadPinValue	24	static
+../Src/MGPIO_program.c:198:9:AFIO_u8SetAltFun	24	static
+../Src/MGPIO_program.c:232:9:AFIO_U8SetEXTIPort	24	static
