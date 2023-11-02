@@ -97,6 +97,14 @@ typedef enum
 	PIN_HIGH
 }PinVal_t;
 
+/*************
+ * @Status_t enum
+ */
+typedef enum
+{
+	RESET=0,
+	SET
+}status_t;
 
 /*************
  * @PinConfig_t enum
@@ -178,7 +186,7 @@ uint8_t GPIO_u8SetPortValue(Port_t Port,uint8_t A_u8Value);
 /*   @param[in]  Status: The port status you need to choose between{SET/RESET}                                    */
 /*   @retVal     ErrorStatus                                                                           */
 /*******************************************************************************************************/
-uint8_t GPIO_u8SetResetPort(Port_t Port,uint8_t Status);
+uint8_t GPIO_u8SetResetPort(Port_t Port,status_t Status);
 
 
 #endif /* MCAL_MGPIO_MGPIO_INTERFACE_H_ */

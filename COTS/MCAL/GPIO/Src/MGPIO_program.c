@@ -174,7 +174,8 @@ uint8_t GPIO_u8ReadPinValue(Port_t Port,Pin_t PinNum,PinVal_t *PinVal)
 	uint8_t Local_u8ErrorState = OK;
 	if((Port < INVALID_PORT) && (PinNum <INVALID_PIN))
 	{
-		*PinVal =(IDR_MASK & ((GPIOPort[Port] ->IDR) >> PinNum));
+		*PinVal =(((GPIOPort[Port] ->IDR) >>PinNum)&IDR_MASK);
+
 	}
 	else
 	{
@@ -218,7 +219,7 @@ uint8_t GPIO_u8SetPortValue(Port_t Port,uint8_t A_u8Value)
 /*   @retVal     ErrorStatus                                                                           */
 /*******************************************************************************************************/
 
-uint8_t GPIO_u8SetResetPort(Port_t Port,uint8_t Status)
+uint8_t GPIO_u8SetResetPort(Port_t Port,status_t Status)
 {
 	uint8_t Local_u8ErrorState = OK;
 	if(Port < INVALID_PORT)
