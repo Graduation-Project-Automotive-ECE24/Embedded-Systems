@@ -1,3 +1,4 @@
 # Embedded-Systems
-Graduation project Embedded Systems subteam repository 
-Notfications for discord: enabled 
+Graduation project Embedded Systems subteam repository
+ 
+- Notfications for discord: enabled 
