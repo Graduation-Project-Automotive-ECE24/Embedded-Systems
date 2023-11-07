@@ -43,11 +43,11 @@ void MTIMERS_voidInit(TIMERConfig_t * TIMERConfig)
 }
 
 void MTIMERS_voidEnableTimer(u8 copy_u8TimerID){
-		switch(u8TimerID)
+		switch(copy_u8TimerID)
 	{
 	case TIMER_1:	
 		SET_BIT(TIM1->CR1,0) ;	
- 		break;
+		break;
 		
 	case TIMER_2:
 		SET_BIT(TIM2->CR1,0) ;	
@@ -60,14 +60,15 @@ void MTIMERS_voidEnableTimer(u8 copy_u8TimerID){
 	case TIMER_4:
 		SET_BIT(TIM4->CR1,0) ;	
 		break;	
+	}
 }
 
 void MTIMERS_voidDisableTimer(u8 copy_u8TimerID){
-		switch(u8TimerID)
+		switch(copy_u8TimerID)
 	{
 	case TIMER_1:	
 		CLR_BIT(TIM1->CR1,0) ;	
- 		break;
+		break;
 		
 	case TIMER_2:
 		CLR_BIT(TIM2->CR1,0) ;	
@@ -80,14 +81,15 @@ void MTIMERS_voidDisableTimer(u8 copy_u8TimerID){
 	case TIMER_4:
 		CLR_BIT(TIM4->CR1,0) ;	
 		break;	
+	}
 }
 
 void MTIMERS_voidEnableInterrupt(u8 copy_u8TimerID,u8 copy_u8Interrupt){
-		switch(u8TimerID)
+		switch(copy_u8TimerID)
 	{
 	case TIMER_1:	
 		SET_BIT(TIM1->DIER,copy_u8Interrupt) ;	
- 		break;
+		break;
 		
 	case TIMER_2:
 		SET_BIT(TIM2->DIER,copy_u8Interrupt) ;	
@@ -100,10 +102,11 @@ void MTIMERS_voidEnableInterrupt(u8 copy_u8TimerID,u8 copy_u8Interrupt){
 	case TIMER_4:
 		SET_BIT(TIM4->DIER,copy_u8Interrupt) ;	
 		break;	
+	}
 }
 
 void MTIMERS_voidPutISRFunction(u8 copy_u8TimerID, void (*ptrF) (void)){
-	switch(u8TimerID)
+	switch(copy_u8TimerID)
 	{
 	case TIMER_1:
 		ptrF_Timer1 = ptrF;
@@ -120,15 +123,16 @@ void MTIMERS_voidPutISRFunction(u8 copy_u8TimerID, void (*ptrF) (void)){
 	case TIMER_4:
 		ptrF_Timer4 = ptrF;
 		break;
+	}
 	
 }
 
 void MTIMERS_voidSetReloadValue(u8 copy_u8TimerID, u16 copy_u16Value){
-	switch(u8TimerID)
+	switch(copy_u8TimerID)
 	{
 	case TIMER_1:
 		TIM1->ARR=copy_u16Value;
- 		break;
+		break;
 	
 	case TIMER_2:
 		TIM2->ARR=copy_u16Value;
@@ -141,6 +145,7 @@ void MTIMERS_voidSetReloadValue(u8 copy_u8TimerID, u16 copy_u16Value){
 	case TIMER_4:
 		TIM4->ARR=copy_u16Value;
 		break;
+	}
 	
 }
 

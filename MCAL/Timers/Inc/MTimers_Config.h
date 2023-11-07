@@ -8,13 +8,6 @@
 #ifndef MTIM_CONFIG_H_
 #define MTIM_CONFIG_H_
 
-typedef struct {
-	u16 u16ReloadValue;
-	u8 u8TimerID;
-	u8 u8CountDir;
-	u8 u8Interrupt;
-	void (*ptrFCalback) (void);
-}TIMERConfig_t;
 
 /************************** TIMER1 *********************************/
 
